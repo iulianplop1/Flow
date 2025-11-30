@@ -40,8 +40,8 @@ export default defineConfig({
       },
     }),
   ],
-  // Use '/' for local development
-  // For GitHub Pages deployment, we'll set base: '/Flow/' in the build command
-  base: '/',
+  // Use environment variable for base path, default to '/' for local development
+  // For GitHub Pages, set VITE_BASE_PATH='/Flow/' in the build command
+  base: process.env.VITE_BASE_PATH || '/',
 })
 
