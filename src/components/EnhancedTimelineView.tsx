@@ -108,10 +108,10 @@ function DroppableTimeSlot({ time, children, hourHeight }: { time: string; child
 export default function EnhancedTimelineView({
   tasks,
   onStartTask,
-  onCompleteTask,
+  onCompleteTask: _onCompleteTask,
   onTaskUpdate,
   selectedDate,
-  onDateChange,
+  onDateChange: _onDateChange,
   viewMode,
   onViewModeChange,
 }: EnhancedTimelineViewProps) {

@@ -219,7 +219,7 @@ export default function AnalyticsDashboard() {
                 fill="#8884d8"
                 dataKey="value"
               >
-                {data.tasksByTag.map((entry, index) => (
+                {data.tasksByTag.map((_, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>

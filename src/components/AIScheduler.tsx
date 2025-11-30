@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Calendar, Clock, Sparkles } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
 import { supabase } from '../lib/supabase'
 import { useAuthStore } from '../stores/authStore'
 import { ScheduledTask } from '../lib/types'

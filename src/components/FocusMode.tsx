@@ -13,7 +13,7 @@ export default function FocusMode({ task, onComplete, onStop }: FocusModeProps) 
   const plannedMinutes = task.activity?.duration_minutes || 30
   const [secondsRemaining, setSecondsRemaining] = useState(plannedMinutes * 60)
   const [isRunning, setIsRunning] = useState(true)
-  const [startTime, setStartTime] = useState(Date.now())
+  const startTime = useRef(Date.now())
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   const handleComplete = async () => {
@@ -23,7 +23,7 @@ export default function FocusMode({ task, onComplete, onStop }: FocusModeProps) 
     }
     setIsRunning(false)
     
-    const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000)
+    const elapsedSeconds = Math.floor((Date.now() - startTime.current) / 1000)
     const actualMinutes = Math.ceil(elapsedSeconds / 60)
 
     // Celebrate!

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
 import { useAuthStore } from '../stores/authStore'
 import { Activity } from '../lib/types'
-import { Repeat, Calendar, X } from 'lucide-react'
+import { Repeat, X } from 'lucide-react'
 
 export default function RecurringTasks() {
   const { user } = useAuthStore()

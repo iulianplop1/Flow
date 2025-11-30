@@ -16,9 +16,11 @@ export default function SocraticDebriefer({
   onSkip,
   onReschedule,
 }: SocraticDebrieferProps) {
-  const [messages, setMessages] = useState([
+  type Message = { role: 'user' | 'assistant'; content: string }
+  
+  const [messages, setMessages] = useState<Message[]>([
     {
-      role: 'assistant' as const,
+      role: 'assistant',
       content: `I noticed you're skipping "${task.activity?.name}". That's okay - we all have days like this. Can you help me understand what's getting in the way?`,
     },
   ])

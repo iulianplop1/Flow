@@ -12,17 +12,6 @@ interface HeaderProps {
 export default function Header({ selectedDate, onDateChange, onSignOut }: HeaderProps) {
   const { energyLevel, setEnergyLevel } = useFilterStore()
 
-  const getEnergyEmoji = (level: EnergyLevel | null) => {
-    switch (level) {
-      case 'High':
-        return '🔥'
-      case 'Low':
-        return '🧟'
-      default:
-        return '😐'
-    }
-  }
-
   return (
     <header className="bg-gray-900 border-b border-gray-800 sticky top-0 z-10">
       <div className="container mx-auto px-2 sm:px-4 py-2 sm:py-4 max-w-4xl">
