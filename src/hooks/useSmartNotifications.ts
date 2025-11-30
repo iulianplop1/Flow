@@ -87,7 +87,7 @@ export function useSmartNotifications(
 
       // Check for energy level alerts
       if (settings.energyAlerts) {
-        checkEnergyAlerts(tasks, now)
+        checkEnergyAlerts(tasks)
       }
     }
 
@@ -157,7 +157,7 @@ export function useSmartNotifications(
     }
   }
 
-  const checkEnergyAlerts = (tasks: Task[], now: Date) => {
+  const checkEnergyAlerts = (tasks: Task[]) => {
     // Check for high-energy tasks scheduled in evening
     const highEnergyTasks = tasks.filter(
       (t) =>

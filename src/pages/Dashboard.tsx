@@ -203,7 +203,6 @@ export default function Dashboard() {
                 })
               }
               // Refresh time bank data
-              const today = new Date().toISOString().split('T')[0]
               const { data: timeBankData } = await supabase
                 .from('time_bank')
                 .select('*')
