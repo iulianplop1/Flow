@@ -1,5 +1,5 @@
 import { Task } from '../lib/types'
-import { CheckCircle2, Circle, X, Play, SkipForward, Clock, Edit2, GripVertical } from 'lucide-react'
+import { CheckCircle2, Circle, X, Play, SkipForward, Clock, Edit2 } from 'lucide-react'
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
 import SocraticDebriefer from './SocraticDebriefer'

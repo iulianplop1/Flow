@@ -66,7 +66,7 @@ function DraggableTask({ task, onStartTask, getTaskPosition, getStatusColor }: a
   )
 }
 
-export default function TimelineView({ tasks, onStartTask, onCompleteTask, onTaskUpdate }: TimelineViewProps) {
+export default function TimelineView({ tasks, onStartTask, onCompleteTask: _onCompleteTask, onTaskUpdate }: TimelineViewProps) {
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {

@@ -1,4 +1,3 @@
-import { EnergyLevel } from '../lib/types'
 import { useFilterStore } from '../stores/filterStore'
 import { LogOut } from 'lucide-react'
 import TimeDisplay from './TimeDisplay'

@@ -36,7 +36,6 @@ export function useSmartNotifications(
 
     const checkTasks = async () => {
       const now = new Date()
-      const currentTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`
 
       // Check for task reminders
       tasks.forEach((task) => {
@@ -121,8 +120,6 @@ export function useSmartNotifications(
   }
 
   const checkBreakReminders = (tasks: Task[], now: Date) => {
-    const currentTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`
-
     // Find completed tasks in last hour
     const recentCompleted = tasks.filter((t) => {
       if (t.status !== 'Completed' || !t.completed_at) return false
@@ -162,7 +159,6 @@ export function useSmartNotifications(
 
   const checkEnergyAlerts = (tasks: Task[], now: Date) => {
     const currentHour = now.getHours()
-    const isEvening = currentHour >= 18 // After 6 PM
 
     // Check for high-energy tasks scheduled in evening
     const highEnergyTasks = tasks.filter(

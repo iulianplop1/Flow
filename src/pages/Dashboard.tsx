@@ -4,7 +4,7 @@ import { useAuthStore } from '../stores/authStore'
 import { useActivityStore } from '../stores/activityStore'
 import { useFilterStore } from '../stores/filterStore'
 import { useTimeBankStore } from '../stores/timeBankStore'
-import { Activity, Task } from '../lib/types'
+import { Task } from '../lib/types'
 import Header from '../components/Header'
 import TaskList from '../components/TaskList'
 import SmartInput from '../components/SmartInput'
@@ -17,7 +17,6 @@ import RecurringTasks from '../components/RecurringTasks'
 import TaskTemplates from '../components/TaskTemplates'
 import CrisisButton from '../components/CrisisButton'
 import SmartStart from '../components/SmartStart'
-import { LogOut } from 'lucide-react'
 
 export default function Dashboard() {
   const { user } = useAuthStore()
