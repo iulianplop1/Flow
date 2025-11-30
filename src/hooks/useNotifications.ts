@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Task } from '../lib/types'
 
+// Get icon path with base URL support
+const getIconPath = () => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}vite.svg`.replace(/\/\//g, '/') // Remove double slashes
+}
+
 export function useNotifications(tasks: Task[]) {
   const [permission, setPermission] = useState<NotificationPermission>('default')
 
@@ -33,7 +39,7 @@ export function useNotifications(tasks: Task[]) {
           if (!localStorage.getItem(notificationKey)) {
             new Notification(`Time for: ${task.activity?.name || 'Task'}`, {
               body: `Scheduled at ${task.planned_time}. Duration: ${task.activity?.duration_minutes || 30} minutes`,
-              icon: '/vite.svg',
+              icon: getIconPath(),
               tag: task.id,
               requireInteraction: false,
             })

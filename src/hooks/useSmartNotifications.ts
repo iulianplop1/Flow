@@ -2,6 +2,12 @@ import { useEffect, useState } from 'react'
 import { Task } from '../lib/types'
 import { supabase } from '../lib/supabase'
 
+// Get icon path with base URL support
+const getIconPath = () => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}vite.svg`.replace(/\/\//g, '/') // Remove double slashes
+}
+
 interface NotificationSettings {
   enabled: boolean
   reminderMinutes: number // Minutes before task to remind
@@ -58,7 +64,7 @@ export function useSmartNotifications(
           getAIPreparationSuggestion(task).then((suggestion) => {
             new Notification(`⏰ Reminder: ${task.activity?.name}`, {
               body: suggestion || `Starting in ${settings.reminderMinutes} minutes. Duration: ${task.activity?.duration_minutes} min`,
-              icon: '/vite.svg',
+              icon: getIconPath(),
               tag: `reminder-${task.id}`,
               requireInteraction: false,
             })

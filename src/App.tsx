@@ -11,10 +11,15 @@ function App() {
 
   useEffect(() => {
     // Check active session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null)
-      setLoading(false)
-    })
+    supabase.auth.getSession()
+      .then(({ data: { session } }) => {
+        setUser(session?.user ?? null)
+        setLoading(false)
+      })
+      .catch((error) => {
+        console.error('Error getting session:', error)
+        setLoading(false) // Still set loading to false so app can render
+      })
 
     // Listen for auth changes
     const {
@@ -34,8 +39,11 @@ function App() {
     )
   }
 
+  // Get base path from environment or use default
+  const basename = import.meta.env.BASE_URL || '/'
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route
           path="/"

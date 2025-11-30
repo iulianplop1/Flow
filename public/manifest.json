@@ -2,14 +2,14 @@
   "name": "FlowState v2",
   "short_name": "FlowState",
   "description": "Advanced Productivity App with AI-powered scheduling",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#2563eb",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/vite.svg",
+      "src": "./vite.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
@@ -19,7 +19,7 @@
   "screenshots": [],
   "shortcuts": [],
   "share_target": {
-    "action": "/",
+    "action": "./",
     "method": "GET",
     "params": {
       "title": "title",
