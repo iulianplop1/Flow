@@ -15,7 +15,7 @@ interface ActivityState {
   refreshTasks: (date?: string) => Promise<void>
 }
 
-export const useActivityStore = create<ActivityState>((set, get) => ({
+export const useActivityStore = create<ActivityState>((set) => ({
   activities: [],
   tasks: [],
   setActivities: (activities) => set({ activities }),
@@ -43,7 +43,7 @@ export const useActivityStore = create<ActivityState>((set, get) => ({
   refreshActivities: async () => {
     // This will be implemented in the component
   },
-  refreshTasks: async (date?: string) => {
+  refreshTasks: async (_date?: string) => {
     // This will be implemented in the component
   },
 }))

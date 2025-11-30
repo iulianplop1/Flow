@@ -158,8 +158,6 @@ export function useSmartNotifications(
   }
 
   const checkEnergyAlerts = (tasks: Task[], now: Date) => {
-    const currentHour = now.getHours()
-
     // Check for high-energy tasks scheduled in evening
     const highEnergyTasks = tasks.filter(
       (t) =>

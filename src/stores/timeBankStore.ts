@@ -23,7 +23,7 @@ export const useTimeBankStore = create<TimeBankState>((set) => ({
     set((state) => ({
       totalMinutesSaved: Math.max(0, (state.totalMinutesSaved || 0) - minutes),
     })),
-  refreshTimeBank: async (date?: string) => {
+  refreshTimeBank: async (_date?: string) => {
     // This will be implemented in the component
   },
 }))

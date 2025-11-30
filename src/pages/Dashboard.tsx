@@ -202,7 +202,18 @@ export default function Dashboard() {
                   minutes_spent: 0,
                 })
               }
-              await refreshTimeBank()
+              // Refresh time bank data
+              const today = new Date().toISOString().split('T')[0]
+              const { data: timeBankData } = await supabase
+                .from('time_bank')
+                .select('*')
+                .eq('user_id', user!.id)
+                .eq('date', today)
+                .maybeSingle()
+              
+              if (timeBankData) {
+                useTimeBankStore.getState().setTimeBank(timeBankData)
+              }
             }
 
             // Check for habit stacking
